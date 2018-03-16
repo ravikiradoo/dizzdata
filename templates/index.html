@@ -1,0 +1,119 @@
+{% extends 'base_temp.html' %}
+
+
+
+{% block section %}
+
+    <section class="sec" id="sec2">
+        <div class="row">
+            <div id="sec1-sql" class="col-md-2 col-sm-2">
+                <div class="aside">
+                    <ul class="list-group">
+                        <a id="code" href="#sec1-sql" class="list-group-item active">Coding Area </a>
+                        <a id="chart" href="" class="list-group-item">Charting Area</a>
+                        <a id="report" href="#sec4-sql" class="list-group-item">Reporting Area</a>
+                    </ul>
+                </div>
+            </div>
+            <div id="sec2-sql" class="col-md-5 col-sm-5">
+                <div class="main">
+                    <div class="coding">
+                        <i id="close-sql" class="fa fa-caret-left" alt="close" title="Shrink"></i>
+                        <div class="container">
+                                <label for="area" style="margin-top: 5px;">Coding Ground:</label>
+                                <div class="form-group">
+                                    <textarea class="form-control z-depth-1" id="area" name="query" form="queryform">
+                                    </textarea>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="select-table">
+                    
+                </div>
+            </div>
+            <div id="sec3-sql" class="col-md-5 col-sm-5">
+                <div class="main1">
+                    <div class="container">
+                        <i id="close" class="fa fa-caret-right" alt="close" title="Shrink"></i>
+                        <div class="image">
+                            <div class="options">
+                                    <button id="btn1" type="button" class="btn btn-primary btn-sm save" >
+                                        <i class="fa fa-save" title="Save to Reporting area"></i>
+                                    </button>
+                            </div>{% load static %}
+                            <img id="img1" class="image-in-images" src="{% static '../static/Images/img1.png' %}" class="mx-auto">
+                        </div><hr><br>
+                        <div class="image">
+                                <div class="options">
+                                        <button id="btn2" type="button" class="btn btn-primary btn-sm save" ><i class="fa fa-save" title="Save to Reporting area"></i></button>
+                                </div>
+                                <img id="img2" class="image-in-images" src="{% static '../static/Images/img2.png' %}" class="mx-auto">
+                        </div><hr><br>
+                        <div class="image">
+                                <div class="options">
+                                        <button id="btn3" type="button" class="btn btn-primary btn-sm save" ><i class="fa fa-save" title="Save to Reporting area"></i></button>
+                                </div>
+                                <img id="img3" class="image-in-images" src="{% static '../static/Images/img3.png' %}" class="mx-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sec4-sql" class="col-md-10 col-sm-10">
+                <div class="main1">
+                    <div class="container">
+                        <div id="image-one" class="image">
+                            <div class="options">
+                                    <button id="btn-one" type="button" class="btn btn-primary btn-sm save" >
+                                        <i class="fa fa-close" title="Save to Reporting area"></i>
+                                    </button>
+                            </div>{% load static %}
+                            <img id="img1" class="image-in-images" src="{% static '../static/Images/img1.png' %}" class="mx-auto">
+                        <hr><br></div>
+                        <div id="image-two" class="image">
+                                <div class="options">
+                                        <button id="btn-two" type="button" class="btn btn-primary btn-sm save" ><i class="fa fa-close" title="Save to Reporting area"></i></button>
+                                </div>
+                                <img id="img2" class="image-in-images" src="{% static '../static/Images/img2.png' %}" class="mx-auto">
+                        <hr><br></div>
+                        <div id="image-three" class="image">
+                                <div class="options">
+                                        <button id="btn-three" type="button" class="btn btn-primary btn-sm save" ><i class="fa fa-close" title="Save to Reporting area"></i></button>
+                                </div>
+                                <img id="img3" class="image-in-images" src="{% static '../static/Images/img3.png' %}" class="mx-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <!--    <div id="sec3-sql" class="col-md-5 col-sm-5">
+                <div class="main1">
+                    <div class="container">
+                        <div class="image">
+                            <i id="close" class="fa fa-close" alt="close" title="close"></i>
+                            <img class="image-in-images" src="Images/Charts_image_series.png" class="mx-auto">
+                        </div><hr><br>
+                        <div class="image">
+                                <i id="close" class="fa fa-close" alt="close" title="close"></i>
+                                <img class="image-in-images" src="Images/Charts_series_regions.png" class="mx-auto">
+                        </div><hr><br>
+                        <div class="image">
+                                <i id="close" class="fa fa-close" alt="close" title="close"></i>
+                                <img class="image-in-images" src="Images/1490861424_783_the-worst-or-the-best-smashing-magazine.png" class="mx-auto">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static '../static/script.js' %}"></script>
+{% endblock %}

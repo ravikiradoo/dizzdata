@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reporting</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+
+				$('#select-db').on('change', function() {
+  					
+  					$("#submit").click();
+					$("#dbname").val($(this).val());
+
+});
+
+				$("#dbselection").submit(function(){
+
+						$.ajax({
+              url: "/GetColumns", 
+              type: "POST",             
+              data: new FormData(this), 
+              contentType: false,   
+        
+           	cache: false,            
+            processData:false,        
+        success: function(data)   
+      {
+      	var optionsAsString = "";
+for(var i = 0; i < data.length; i++) {
+    optionsAsString += "<option value='" + data[i] + "'>" + data[i] + "</option>";
+}
+$("#columns1").find('option').remove().end().append($(optionsAsString));
+   $("#columns2").find('option').remove().end().append($(optionsAsString));         
+
+      }
+            });
+          return false;
+
+        });
+
+		$("#select-col").submit(function(){
+		
+		$.ajax({
+              url: "/GetColumnsData", 
+              type: "POST",             
+              data: new FormData(this), 
+              contentType: false,   
+        
+           	cache: false,            
+            processData:false,        
+        success: function(data)   
+      {
+	  alert(data);
+	  }
+	  });
+	  return false;
+		
+		});
+
+				});
+	
+	</script>
+</head>
+
+<body>
+
+<form id="dbselection">
+		{% csrf_token %}
+	<select id="select-db" name="table">
+		<option>convert</option>
+			<option>convert</option>
+	<select>
+		<input type="submit" name="submit" id="submit">
+</form>
+
+<form id="select-col">
+
+<input type="hidden" display:none name="db" value="" id="dbname"/>
+{% csrf_token %}
+	<select id="columns1" name="col1">
+		
+	</select>
+		<select id="columns2" name="col2">
+		
+	</select>
+	<input type="submit" name="submit" id="submit2">
+</form>
+</body>
+</html>
